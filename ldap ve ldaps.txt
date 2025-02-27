@@ -1,0 +1,19 @@
+#kaynak:https://www.ibm.com/docs/en/sqsp/50?topic=configuration-importing-untrusted-certificates#task_f5d_5kf_gcb
+
+sudo resutil ldapedit -name myLDAPS -host onur.com.tr -bindname "CN=onur ,OU=System Accounts,DC=onur,DC=com,DC=tr" -port 389
+#ldap kullanıcısının şifresi istenmektedir. 
+
+sudo resutil ldapedit -name myLDAPS -host onur.com.tr -bindname "CN=onur ,OU=System Accounts,DC=onur,DC=com,DC=tr" -port 636 -usessl
+# direkt ssl çalışmıyor. 
+
+#ssl dosyası çekilir
+openssl s_client -connect onur.com.tr:636 -tls1 -showcerts </dev/null 2>/dev/null|openssl x509 -outform PEM > active-directory.pem
+
+#çekilen pem dosyası ile custom trust certifika oluşturulur
+sudo keytool -importcert -trustcacerts -file active-directory.pem -alias OnurActiveDirectory -keystore /crypt/certs/custcerts
+
+#eger active directory de birden fazla makine var ve her makinenin sertifikası farklı ise root+intermedit+wildcard sertifikaları aşağıdaki gibi tek bir bundle halinde yükleyebilirsiniz.
+keytool -importcert -trustcacerts -keystore /crypt/certs/custcerts -storepass "$(resutil keyvaultget -name 'custcerts')" -file /home/resadmin/onur_cert.pem -alias onurLDAPS
+
+#eğer şifre oluşturduysanız bu komut ile şifreyi tekrar girmeniz gerekiyor.şifre görünür bir şekilde gelir ve CTRL+D  kullanılarak çıkılır.
+sudo resutil keyvaultset -name custcerts -stdin
