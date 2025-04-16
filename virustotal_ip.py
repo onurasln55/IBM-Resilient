@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # <<PUT YOUR COPYRIGHT TEXT HERE>>
 # Generated with resilient-sdk v51.0.4.0.1351
+# kurulum için "resilient-sdk codegen -p onur_virustotal_ip -f virustotal_ip -m virustotal_ip" paket oluşturuluyor.
+# p path f soar fonksiyonu m modüle 
+# komutun çalışması için soarda dest oluşturup fonksiyon ile yönlendirilip. ardından "pip install --editable onur_virustotal_ip" ile paketi kurup çalıştırabiliriz. 
+# circuitin yeniden başlatılması gerek. Yeniden başlamada hata varsa kodda hata vardır.
 
 """AppFunction implementation"""
 
