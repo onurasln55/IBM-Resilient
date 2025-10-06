@@ -1,0 +1,25 @@
+Yeni Kullanıcı oluştur
+
+sudo adduser qractor-second
+usermod -aG sudo qractor-second
+sudo usermod -aG sudo qractor-second
+
+dosyaya yetki ver ve kur
+sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+
+kurulacak sürüme göre uyarlanacak pip freeze üzerinden orjinal sürüm alınabilir. soar sürüm ile aynı olmalı
+pip install resilient-circuits
+pip install resilient-sdk
+
+config dosyası oluşturma
+resilient-circuits config -c
+
+-u yapılırsa güncellemesi yapılır.
+
+config dosyasını aç ve güncelle 
+
+
+supervisor altında cond oluşturduk 
+supervisorctl reread-> yeniden okuttuk.
+
