@@ -1,2 +1,2 @@
-sudo resutil smtpedit -email IBMResilient@onur.com.tr -host smtp.onur.com.tr -name "IBMResilient" -port  587
-#email notification gönderebilmesi için smtp baglantısı kurulur.
+sudo resutil smtpedit -email IBMResilient@onur.com.tr -host smtp.onur.com.tr -name "IBMResilient" -port  587 -user IBMResilient@onur.com.tr
+#email notification gönderebilmesi için smtp baglantısı kurulur. port kurumdan kuruma değişiklik gösterebilir.
