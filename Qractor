@@ -38,4 +38,5 @@ user=qractor
 environment=SECRET_PASSPHRASE='secret',SECRET_TWO='another'
 ---------------------------------------------------------------------------------
 supervisorctl reread-> yeniden okuttuk.
+supervisorctl update
 
