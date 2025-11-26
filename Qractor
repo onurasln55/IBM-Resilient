@@ -21,5 +21,21 @@ config dosyasını aç ve güncelle
 
 
 supervisor altında cond oluşturduk 
+sudo apt-get install supervisor -y
+sudo systemctl status supervisor
+/etc/supervisor/conf.d/
+eskilerden kopyalayıp yenisi oluşturulabilr.
+---------------------------------------------------------------------------------
+[program:qractor-resilient-circuits]
+command=/home/qractor/miniconda3/bin/resilient-circuits run
+directory=/home/qractor
+autostart=true
+autorestart=true
+startretries=3
+stderr_logfile=/home/qractor/.resilient/supervisor.err.log
+stdout_logfile=/home/qractor/.resilient/supervisor.out.log
+user=qractor
+environment=SECRET_PASSPHRASE='secret',SECRET_TWO='another'
+---------------------------------------------------------------------------------
 supervisorctl reread-> yeniden okuttuk.
 
