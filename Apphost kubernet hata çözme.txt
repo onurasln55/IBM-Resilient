@@ -1,0 +1,4 @@
+apphostta root a geç 
+kubectl get pods -A  kubernetleri görüntüler. hata veren appi reboot edersen başlangıc süresinden id yakalayabilirsin 
+kubectl exec -it 652cecce-72c1-467b-b8d8-85ccd37b87d2-588f9fd744-d77zd -n c3664e11-27f7-4f50-9ad2-443dba665c40 -- sh  kubernet içindeki shel e düşülerek işlem yapılabilir.
+özellikle scheduler gibi dizin belirtilmesi gereken ve apphostta kurulu uygulamalar için gerekli olabilir.
